@@ -4,10 +4,11 @@ import './globals.css';
 import BestSellerProducts from "./components/Products/BestSellerProducts";
 import NewReleaseProducts from "./components/Products/NewReleaseProducts";
 import Image from "next/image";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="homepage">
+    <div className="homepage bg-black text-white">
       <Navbar />
       <section className="hero-section z-0 bg-[url('/images/Artboard_2028_20_281_29.jpg')] bg-left-top bg-no-repeat bg-cover lg:h-[100vh] md:h-[80vh] h-[65vh] flex items-center justify-center">
         <div className="text-center lg:w-[600px] md:w-[500px] w-[90%] p-[35px] rounded-[15px] bg-[#14191e99] backdrop-blur-[20px] border-2 border-[#14191ebe]">
@@ -31,7 +32,11 @@ export default function Home() {
               <Link href='' className="border-b-2 border-[#ffffff80] py-0 w-full px-2">Women</Link>
             </div>
           </div>
-          <div className="products py-5 border-y-2 border-[#ffffff1c]">
+          <div className="products py-5 border-y-2 border-[#ffffff1c] grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-[15px]">
+            <BestSellerProducts />
+            <BestSellerProducts />
+            <BestSellerProducts />
+            <BestSellerProducts />
             <BestSellerProducts />
           </div>
           <div className="showcase grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5 py-5">
@@ -55,12 +60,15 @@ export default function Home() {
               <Link href='' className="border-b-2 border-[#ffffff80] py-0 w-full px-2">Women</Link>
             </div>
           </div>
-          <div className="products py-5 border-y-2 border-[#ffffff1c]">
+          <div className="products py-5 border-y-2 border-[#ffffff1c] grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-[15px]">
+            <NewReleaseProducts />
+            <NewReleaseProducts />
+            <NewReleaseProducts />
+            <NewReleaseProducts />
             <NewReleaseProducts />
           </div>
         </div>
       </section>
-
 
       <section className="voted py-[150px] bg-[url(/images/best-tees.webp)] bg-cover bg-top my-5">
         <div className="inner-text text-white lg:w-[65%] md:w-[75%] w-[85%] mx-auto flex flex-col gap-[10px]">
@@ -69,7 +77,6 @@ export default function Home() {
           <button className="btn w-fit h-[40px] px-5 border border-white bg-transparent text-white rounded-[5px] mx-auto mt-[30px]">Shop Now</button>
         </div>
       </section>
-
 
       <section className="trending">
         <div className="container">
@@ -102,6 +109,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
